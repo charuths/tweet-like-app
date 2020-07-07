@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def follow_user
-    byebug
     user_id = User.find(params[:id]).id
     @follower = Follower.create(user_id: user_id)
     
